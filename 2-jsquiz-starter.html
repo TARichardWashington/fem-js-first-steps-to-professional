@@ -98,11 +98,7 @@
     }
 
     function isCorrect(guess) {
-        if(guess === statement.answer) {
-            return true;
-        }
-
-        return false;
+        return guess === statement.answer;
     }
 
     for(let i=0; i<optionButtons.length; i++) {
