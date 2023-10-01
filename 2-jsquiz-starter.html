@@ -83,7 +83,7 @@
 
     const fact = {
         statement: "Strings are immutable", 
-        answer: "true", 
+        answer: true, 
         explanation: "In JavaScript strings, like other primitive types are not immutable.  This means strings cannot be changed. However we can create new ones and assign them to existing variables, apart form those declared as const as they are not reassignable."
     };   
 
@@ -111,7 +111,7 @@
            }
            const guess = button.value;
 
-           if(guess === fact.answer) {
+           if(guess === fact.answer.toString()) {
             button.classList.add("correct");
            } else {
             button.classList.add("incorrect");
