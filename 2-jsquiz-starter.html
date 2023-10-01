@@ -122,18 +122,18 @@
     // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
     for(let i=0; i<optionButtons.length; i++) {
         optionButtons[i].addEventListener('click', (e) => {
+           const button = e.target;            
            explanation.textContent = fact.explanation; 
 
            for(let i=0; i<optionButtons.length; i++) {
             disable(optionButtons[i]);
            }
-
-           const guess = e.target.value;
+           const guess = button.value;
 
            if(guess === fact.answer) {
-            e.target.classList.add("correct");
+            button.classList.add("correct");
            } else {
-            e.target.classList.add("incorrect");
+            button.classList.add("incorrect");
            }           
         });
     }
