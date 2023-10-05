@@ -101,12 +101,12 @@
         return guess === statement.answer;
     }
 
-    for(button of optionButtons) {
+    for(let button of optionButtons) {
            button.addEventListener('click', (e) => {
            const button = e.target;            
            explanation.textContent = fact.explanation; 
 
-           for(buttonToBeDisabled of optionButtons) {
+           for(let buttonToBeDisabled of optionButtons) {
             disable(buttonToBeDisabled);
            }
            const guess = button.value;
