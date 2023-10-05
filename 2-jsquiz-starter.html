@@ -98,7 +98,7 @@
     }
 
     function isCorrect(guess) {
-        return guess === statement.answer;
+        return guess === fact.answer.toString();
     }
 
     for(let button of optionButtons) {
@@ -109,9 +109,10 @@
             for(let buttonToBeDisabled of optionButtons) {
                 disable(buttonToBeDisabled);
             }
-            const guess = button.value;
+            
+            const guess = button.value
 
-            if(guess === fact.answer.toString()) {
+            if(isCorrect(guess)) {
                 button.classList.add("correct");
             } else {
                 button.classList.add("incorrect");
