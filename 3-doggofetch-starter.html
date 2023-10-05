@@ -90,12 +90,12 @@
     function getMultipleChoices(n, correctAnswer, incorrectAnswers) {
         const choices = [];
         choices.push(correctAnswer);
+
         while(choices.length < n) {
             let potentialAnswer = getRandomElement(incorrectAnswers);
             if(!choices.includes(potentialAnswer)) {
                 choices.push(getRandomElement(incorrectAnswers));  
-            }
-                
+            }                
         }
 
         return shuffleArray(choices)
