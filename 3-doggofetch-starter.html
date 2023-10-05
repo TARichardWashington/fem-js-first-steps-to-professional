@@ -91,14 +91,10 @@
         const choices = [];
         choices.push(correctAnswer);
         while(choices.length < n) {
-            let choice = getRandomElement(incorrectAnswers);
-            choices.push(getRandomElement(incorrectAnswers));
-            n++;            
+            choices.push(getRandomElement(incorrectAnswers));        
         }
 
-        choices = shuffleArray(choices);
-
-        return choices;
+        return shuffleArray(choices)
     }
 
     const answers = getMultipleChoices(5, 'dog', ['cat', 'snake', 'banana', 'cow', 'cheese']);
