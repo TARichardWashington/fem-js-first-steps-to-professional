@@ -103,19 +103,19 @@
 
     for(let button of optionButtons) {
            button.addEventListener('click', (e) => {
-           const button = e.target;            
-           explanation.textContent = fact.explanation; 
+            const button = e.target;            
+            explanation.textContent = fact.explanation; 
 
-           for(let buttonToBeDisabled of optionButtons) {
-            disable(buttonToBeDisabled);
-           }
-           const guess = button.value;
+            for(let buttonToBeDisabled of optionButtons) {
+                disable(buttonToBeDisabled);
+            }
+            const guess = button.value;
 
-           if(guess === fact.answer.toString()) {
-            button.classList.add("correct");
-           } else {
-            button.classList.add("incorrect");
-           }           
+            if(guess === fact.answer.toString()) {
+                button.classList.add("correct");
+            } else {
+                button.classList.add("incorrect");
+            }           
         });
     }
   </script>
