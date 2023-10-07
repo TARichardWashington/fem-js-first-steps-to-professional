@@ -109,7 +109,15 @@
     }
 
     async function fetchMessage(url) {
-        const response = await fetch(url);
+        let response;
+        try {
+            response = await fetch(url);
+            if(!response.ok) {
+                throw new Error('Failed to fetch')
+            }
+        } catch(e) {
+            console.log(e.message);
+        }
         const body = await response.json();
         const {message} = body;
         return message;
