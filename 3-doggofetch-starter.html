@@ -136,9 +136,16 @@
         // Create a button element whose name, value, and textContent properties are the value of that choice,
         // attach a "click" event listener with the buttonHandler function,
         // and append the button as a child of the options element
-        
-    }
 
+        for(let choice of choicesArray) {
+            const newButton = document.createElement("button");
+            newButton.textContent = choice;
+            newButton.setAttribute("name", choice);
+            newButton.setAttribute("value", choice);
+            newButton.addEventListener("click", buttonHandler);
+            options.appendChild(newButton);
+        }        
+    }
 
     // Function to add the quiz content to the page
     function renderQuiz(imgUrl, correctAnswer, choices) {
@@ -168,9 +175,8 @@
     // TODO 5
     // Asynchronously call the loadQuizData() function,     
     // Then call renderQuiz() with the returned imageUrl, correctAnswer, and choices 
-    
-    
-
+    let [imageUrl, correctAnswer, choices] = await loadQuizData ();
+    renderQuiz(imageUrl, correctAnswer, choices);  
 
   </script>
 </html>
